@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+
+
+
+
+
+{% block title %}
+Голова сторінка
+{% endblock %}
+
+
+
+{% block body %}
+<section class="welcome">
+	<style>.welcome {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  border-radius: 12px;
+}
+
+.welcome h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #ffebc8;
+}
+
+.welcome p {
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.welcome ul {
+  list-style-type: square;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.welcome li {
+  margin-bottom: 8px;
+}</style>
+  <h1>Ласкаво просимо до CoffeeTime!</h1>
+  <p>
+    У світі, де все рухається швидко, ми пропонуємо вам зупинитися на мить — і насолодитися ароматом справжньої кави.
+    Ми віримо, що кожна чашка — це подорож: від зеленого зерна, зібраного руками фермерів у горах Ефіопії, до вашого затишного ранку вдома.
+  </p>
+
+  <p>
+    У нашому магазині ви знайдете тільки найкраще:
+  </p>
+
+  <ul>
+    <li>Свіжозмелену каву власного обсмаження з ретельно відібраних зерен</li>
+    <li>Преміальні сорти арабіки та робусти з Колумбії, Бразилії, Ефіопії та Індії</li>
+    <li>Натуральні ароматизовані суміші з нотами ванілі, шоколаду, горіхів</li>
+    <li>Знижки для постійних клієнтів та кавові підписки</li>
+    <li>Оперативну доставку по Україні в еко-упаковці</li>
+  </ul>
+
+  <p>
+    Обирайте свою ідеальну каву прямо зараз — і відчуйте, як звичайний день перетворюється на щось особливе!
+  </p>
+</section>
+<footer class="site-footer">
+	<style>.site-footer {
+  background-color: #2e1f13;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.site-footer a {
+  color: #ffd699;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.about-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #d9a066;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.about-button:hover {
+  background-color: #b5763b;
+}</style>
+  <div class="footer-content">
+    <p>&copy; 2025 CoffeeTime. Всі права захищено.</p>
+    <p>Контакти: <a href="mailto:info@coffeetime.ua">info@coffeetime.ua</a> | +38 (097) 123-45-67</p>
+   <button onclick="window.location.href='http://127.0.0.1:5000/about'" class="about-button">Про нас</button>
+  </div>
+</footer>
+{% endblock %}

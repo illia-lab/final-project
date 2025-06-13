@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+        <header>
+        <div class="logo">☕ Coffee Lovers</div>
+        <nav>
+            <ul>
+                <li><a href="http://127.0.0.1:5000/index">Головна</a></li>
+                <li><a href="http://127.0.0.1:5000/products">Кава</a></li>
+                <li><a href="http://127.0.0.1:5000/cart">Кошик</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block body %}{% endblock %}
+</body>
+</html>
