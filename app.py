@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 
+import sqlite3
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -42,7 +43,8 @@ def add_to_cart(product_id):
 @app.route('/cart')
 def cart():
     cart_items = session.get('cart', [])
-    return render_template('cart.html', cart=cart_items)
+    total = sum(item['price'] for item in cart_items)
+    return render_template('cart.html', cart=cart_items,total=total)
 
 @app.route('/remove_from_cart/<int:product_id>')
 def remove_from_cart(product_id):
@@ -51,13 +53,43 @@ def remove_from_cart(product_id):
     session['cart'] = cart
     return redirect(url_for('cart'))
 
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        conn = sqlite3.connect('users.db')
+        cursor = conn.cursor()
+        try:
+            cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
+            conn.commit()
+        except sqlite3.IntegrityError:
+            conn.close()
+            return 'Користувач з таким іменем вже існує'
+        conn.close()
+        return redirect(url_for('login'))
+    return render_template('register.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = ''
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        conn = sqlite3.connect('users.db')
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
+        user = cursor.fetchone()
+        conn.close()
+
+        if user:
+            session['user'] = username
+            return redirect(url_for('index'))
+        else:
+            error = 'Невірний логін або пароль'
+    return render_template('login.html', error=error)
+
 if __name__ == ("__main__"):
     app.run(debug = True)
-
-@app.route('/cart')
-def cart():
-    cart_items = session.get('cart', [])
-    total = sum(item['price'] for item in cart_items)
-    return render_template('cart.html', cart=cart_items, total=total)
-
-

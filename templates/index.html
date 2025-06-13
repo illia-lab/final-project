@@ -1,19 +1,141 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Головна</title>
+  <style>
+    body {
+      background-color: #3b2a1a;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    header {
+      background-color: #2e1f13;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      background-color: #d9a066;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .nav-buttons a:hover {
+      background-color: #b5763b;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
 
 
+  <header>
+		<style>
+			header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in-out;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
 
 
+nav ul li a {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #FFD700, #D4A373);
+    color: #6f4e37;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li a:hover {
+    background: linear-gradient(135deg, #6f4e37, #8B5A2B);
+    color: white;
+    transform: scale(1.15);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
+    transform: scale(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+nav ul li a:hover::before {
+    transform: scale(1);
+}
 
 
-{% block title %}
-Голова сторінка
-{% endblock %}
+		</style>
+    <div class="logo">☕ Coffee Lovers</div>
+        <nav>
+            <ul>
+                <li><a href="http://127.0.0.1:5000/index">Головна</a></li>
+                <li><a href="http://127.0.0.1:5000/products">Кава</a></li>
+                <li><a href="http://127.0.0.1:5000/cart">Кошик</a></li>
+            </ul>
+        </nav>
+    <div class="nav-buttons">
+      <a href="http://127.0.0.1:5000/login">Вхід</a>
+      <a href="http://127.0.0.1:5000/register">Реєстрація</a>
+    </div>
+  </header>
 
+  <h1>Ласкаво просимо до магазину кави</h1>
 
-
-{% block body %}
-<section class="welcome">
-	<style>.welcome {
+	<section class="welcome">
+		<style>.welcome {
   max-width: 800px;
   margin: 40px auto;
   padding: 30px;
@@ -66,7 +188,8 @@
     Обирайте свою ідеальну каву прямо зараз — і відчуйте, як звичайний день перетворюється на щось особливе!
   </p>
 </section>
-<footer class="site-footer">
+
+	<footer class="site-footer">
 	<style>.site-footer {
   background-color: #2e1f13;
   color: #fff;
@@ -105,4 +228,6 @@
    <button onclick="window.location.href='http://127.0.0.1:5000/about'" class="about-button">Про нас</button>
   </div>
 </footer>
-{% endblock %}
+
+</body>
+</html>

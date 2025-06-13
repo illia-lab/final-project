@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Вхід</title>
+</head>
+<body>
+  <h2>Вхід</h2>
+  <form method="post">
+    <label>Ім'я користувача:</label><br>
+    <input type="text" name="username" required><br><br>
+    <label>Пароль:</label><br>
+    <input type="password" name="password" required><br><br>
+    <input type="submit" value="Увійти">
+  </form>
+  <p style="color: red;">{{ error }}</p>
+</body>
+</html>
