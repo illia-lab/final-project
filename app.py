@@ -15,16 +15,16 @@ def about():
     return render_template('about.html')
 
 products = [
-    {'id': 1, 'name': 'Ефіопська Арабіка', 'price': 240, 'image': '/image/coffee1.jpeg'},
-    {'id': 2, 'name': 'Бразильська кава з горіхами', 'price': 195, 'image': '/image/coffee2.jpg'},
-     {'id': 3, 'name': 'Екзцелса', 'price': 325, 'image': '/image/coffee1.jpeg'},
-    {'id': 4, 'name': 'Робуста', 'price': 410, 'image': '/image/coffee2.jpg'},
-     {'id': 5, 'name': 'Ліберіка', 'price': 130, 'image': '/image/coffee1.jpeg'},
-    {'id': 6, 'name': 'Стенофіла', 'price': 190, 'image': '/image/coffee2.jpg'},
-     {'id': 7, 'name': 'Бразильська Сантос', 'price': 260, 'image': '/image/coffee1.jpeg'},
-    {'id': 8, 'name': 'Колумбійська Супремо', 'price': 1000, 'image': '/image/coffee2.jpg'},
-         {'id': 9, 'name': 'Суматра Менделінг', 'price': 750, 'image': '/image/coffee1.jpeg'},
-    {'id': 10, 'name': 'Кенійська АА', 'price': 3200, 'image': '/image/coffee2.jpg'},
+    {'id': 1, 'name': 'Ефіопська Арабіка', 'price': 240, 'image': '/coffee1.jpeg'},
+    {'id': 2, 'name': 'Бразильська кава з горіхами', 'price': 195, 'image': '/coffee2.jpg'},
+     {'id': 3, 'name': 'Екзцелса', 'price': 325, 'image': '/coffee3.jpg'},
+    {'id': 4, 'name': 'Робуста', 'price': 410, 'image': '/coffee4.jpg'},
+     {'id': 5, 'name': 'Ліберіка', 'price': 130, 'image': '/coffee5.jpg'},
+    {'id': 6, 'name': 'Стенофіла', 'price': 190, 'image': '/coffee6.jpeg'},
+     {'id': 7, 'name': 'Бразильська Сантос', 'price': 260, 'image': '/coffee7.jpg'},
+    {'id': 8, 'name': 'Колумбійська Супремо', 'price': 1000, 'image': '/coffee8.jpg'},
+         {'id': 9, 'name': 'Суматра Менделінг', 'price': 750, 'image': '/coffee9.jpg'},
+    {'id': 10, 'name': 'Кенійська АА', 'price': 3200, 'image': '/coffee10.jpg'},
 ]
 
 @app.route('/products')

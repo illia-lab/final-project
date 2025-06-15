@@ -5,13 +5,120 @@
   <title>Реєстрація</title>
 </head>
 <body>
+  <style>body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff8e1; /* світло-жовтий фон */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 60px auto;
+    background: #fff3cd; /* пастельний жовтий */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #8a6d3b;
+    margin-bottom: 25px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* центрує всі елементи в формі */
+}
+
+label {
+    margin: 0;
+    margin-bottom: 5px;
+    color: #7c4f14;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="username"] {
+    width: 30%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #f0c36d;
+    border-radius: 8px;
+    background-color: #fffde7;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="username"]:focus {
+    width: 30%;
+    border-color: #ffc107;
+    outline: none;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 30%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #f0c36d;
+    border-radius: 8px;
+    background-color: #fffde7;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    width: 30%;
+    border-color: #ffc107;
+    outline: none;
+}
+
+button {
+    width: auto;
+    padding: 10px 24px;
+    background-color: #fbc02d;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #f9a825;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #8a6d3b;
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}</style>
   <h2>Реєстрація</h2>
   <form method="post">
     <label>Ім'я користувача:</label><br>
     <input type="text" name="username" required><br><br>
     <label>Пароль:</label><br>
     <input type="password" name="password" required><br><br>
-    <input type="submit" value="Зареєструватися">
+    <button type="submit">Зареєструватися</button>
   </form>
 </body>
 </html>
